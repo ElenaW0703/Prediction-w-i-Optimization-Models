@@ -1,5 +1,7 @@
 ### Prediction-with-Optimization-Models
 ### *OptimizationModels.ipynb* 
+#### Gaussian Process Regression
+Implementing a number of functions which will be used to fit a non-linear function to 1-dimensional data using Gaussian process regression. 
 #### Task1
 Write a generic function which will be able to fit a Gaussian process regression model to each of provided data sets via maximum likelihood estimation. \
 For a Gaussian process regression we will assume a model with the following form,
