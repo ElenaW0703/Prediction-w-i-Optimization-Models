@@ -34,7 +34,9 @@ The goal therefore is to find,
 Once the model parameters have been obtained the goal will be to predict (i.e. draw samples from) our Gaussian process model for new values of $x$. Specifically, we want to provide an fine, equally space grid of $x$ values from which we will predict the value of the function. Multiple independent predictions (draws) can then be average to get an overall estimate of the underlying smooth function for each data set.
 
 Therefore the goal is to find the conditional predictive distribution of $y_p$ given $y$, $x$, $x_p$, and $\theta = (\sigma^2_n, \sigma^2_s, l)$. Given everything is a multivariate normal distribution, this conditional distribution is
-$$ y_p | y, \theta \sim \text{MVN}(\mu^\star, \Sigma^\star)$$  
+```math
+y_p | y, \theta \sim \text{MVN}(\mu^\star, \Sigma^\star)
+```
 where
 ```math
 \begin{align*}
