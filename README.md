@@ -52,6 +52,41 @@ Take the result from the `predict()` function and generate a plot showing the me
 
 Optionally, the user should be able to provide the original data set `d` which would then be overlayed as a scatter plot.
 
-*NewtonOptimization_torch.ipynb* \
+### *NewtonOptimization_torch.ipynb* 
+#### Task1
+Write an python function, `newton`, which implements Newtonâs method for minimization of functions using PyTorch, specificially using the autograd functionality.
+
+The function signature should be as follows,
+```
+def newton(theta, f, tol = 1e-8, fscale=1.0, maxit = 100, max_half = 20)
+```
+with the arguments defined as follows:
+
+* `theta` is a vector of initial values for the optimization parameters.
+* `f` is the objective function to minimize. This function should take PyTorch tensors as inputs and returns a Tensor.
+* `tol` the convergence tolerance.
+* `fscale` a rough estimate of the magnitude of `f` at the optimum - used for convergence testing.
+* `maxit` the maximum number of Newton iterations to try before giving up.
+* `max_half` the maximum number of times a step should be halved before concluding that the step has failed to improve the objective.
+
+`newton` function should return a dictionary containing:
+* `f` the value of the objective function at the minimum.
+* `theta` the value of the parameters at the minimum.
+* `iter` the number of iterations taken to reach the minimum.
+* `grad` the gradient vector at the minimum (so the user can judge closeness to  numerical zero).
+
+The function should issue errors or warnings in at least the following cases:
+
+1. If the objective or derivatives are not finite at the initial `theta`. 
+2. If the step fails to reduce the objective despite trying `max_half` step halvings. 
+3. If `maxit` is reached without convergence.
+4. If the Hessian is not positive definite at convergence.
+
+#### Task2
+For each of the minimization problems, use `newton()` function to find the minima using **at least 3 different** theta starting values.
+
+1. Quadratic function
+2. Rosenbrock's function
+3. Poisson regression likelihood
 
 
